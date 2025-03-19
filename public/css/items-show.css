@@ -1,0 +1,280 @@
+.item-detail-container {
+    margin-top: 20px;
+}
+
+.item-detail-header {
+    margin-bottom: 20px;
+}
+
+.item-detail-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.item-detail-content {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.item-detail-right {
+    flex: 0 0 45%;
+}
+
+.item-detail-image {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.item-detail-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.detail-category-tag {
+    font-size: 14px;
+    background-color: #f8f8f8;
+    color: #666666;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.item-detail-info {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.item-detail-price, .item-detail-condition, .item-detail-seller {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.price-label, .condition-label, .seller-label {
+    flex: 0 0 120px;
+    font-weight: 500;
+    color: #666666;
+}
+
+.price-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff6600;
+}
+
+.condition-value, .seller-link {
+    font-size: 16px;
+}
+
+.seller-link {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.seller-link:hover {
+    text-decoration: underline;
+}
+
+.item-detail-actions {
+    margin-top: 20px;
+}
+
+.action-buy {
+    font-size: 18px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.like-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.like-button.liked {
+    background-color: #ffebee;
+    border-color: #e57373;
+    color: #e57373;
+}
+
+.like-count {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.own-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.item-detail-description {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.description-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.description-content {
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.item-comments-section {
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comments-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.comments-list {
+    margin-bottom: 30px;
+}
+
+.comment-item {
+    padding: 15px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.comment-user {
+    font-weight: 500;
+    margin-right: 10px;
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #666666;
+}
+
+.comment-delete-form {
+    position: absolute;
+    right: 0;
+}
+
+.comment-delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.comment-body {
+    line-height: 1.5;
+}
+
+.no-comments {
+    text-align: center;
+    padding: 30px 0;
+    color: #666666;
+}
+
+.comment-form-container {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input {
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.comment-submit {
+    align-self: flex-end;
+}
+
+.login-to-comment {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.login-link {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.related-items-section {
+    margin-top: 40px;
+}
+
+.related-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.related-items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .related-items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

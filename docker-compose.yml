@@ -1,0 +1,54 @@
+services:
+  # PHPサービス
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: coachtech-furima-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - coachtech-network
+
+  # Nginxサービス
+  web:
+    image: nginx:1.21
+    container_name: coachtech-furima-web
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - coachtech-network
+    depends_on:
+      - app
+
+  # MySQLサービス
+  db:
+    image: mysql:8.0
+    container_name: coachtech-furima-db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: coachtech_furima
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: password
+      MYSQL_USER: user
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - coachtech-db-data:/var/lib/mysql
+    networks:
+      - coachtech-network
+
+networks:
+  coachtech-network:
+    driver: bridge
+
+volumes:
+  coachtech-db-data:

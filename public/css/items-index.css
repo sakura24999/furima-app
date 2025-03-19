@@ -1,0 +1,137 @@
+.items-container {
+    margin-top: 20px;
+}
+
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+}
+
+.filter-form {
+    display: flex;
+    align-items: center;
+}
+
+.filter-label {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.filter-button {
+    margin-left: 10px;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.item-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.item-link {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.item-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.item-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    padding: 15px;
+}
+
+.item-name {
+    font-size: 16px;
+    margin: 0 0 8px;
+    line-height: 1.3;
+    height: 42px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff6600;
+    margin: 0 0 8px;
+}
+
+.item-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.category-tag {
+    font-size: 12px;
+    background-color: #f8f8f8;
+    color: #666666;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.pagination-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.no-items {
+    text-align: center;
+    margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+    .items-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-container {
+        margin-top: 20px;
+    }
+
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
