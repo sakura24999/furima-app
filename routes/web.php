@@ -6,15 +6,35 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseController;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::get('/', [ItemController::class, 'index'])->name('home');
 
 Route::resource('items', ItemController::class)->only(['index', 'show']);
 
 Route::middleware(['auth'])->group(function () {
+
+    // メール認証関連のルート
+    Route::get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
+
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+        return redirect('/')->with('verified', true);
+    })->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
+
+    Route::post('/email/verification-notification', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('message', '確認リンクを送信しました');
+    })->middleware(['throttle:6,1'])->name('verification.send');
+
     // 商品関連
     Route::resource('items', ItemController::class)->except(['index', 'show']);
+});
 
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/my-items', [ItemController::class, 'myItems'])->name('items.myItems');
 
     // いいね関連

@@ -73,7 +73,12 @@ return [
     |
     */
 
-    'home' => '/home',
+    'home' => function () {
+        if (auth()->check() && !auth()->user()->hasVerifiedEmail()) {
+            return '/email/verify';
+        }
+        return '/';
+    },
 
     /*
     |--------------------------------------------------------------------------

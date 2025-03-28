@@ -27,7 +27,7 @@
             <div class="header-inner">
                 <div class="header-logo">
                     <a href="{{route('home')}}" class="logo-link">
-                        <h1 class="logo-text">COACHTECHフリマ</h1>
+                        <h1 class="logo-text">SAKURAフリマ</h1>
                     </a>
                 </div>
 
@@ -95,7 +95,7 @@
             <div class="footer-inner">
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h3 class="footer-heading">COACHTECHフリマについて</h3>
+                        <h3 class="footer-heading">SAKURAフリマについて</h3>
                         <ul class="footer-list">
                             <li><a href="#" class="footer-link">会社概要</a></li>
                             <li><a href="#" class="footer-link">採用情報</a></li>
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="footer-bottom">
-                    <p class="copyright">&copy; {{date('Y')}} COACHTECHフリマ All Rights Reserved</p>
+                    <p class="copyright">&copy; {{date('Y')}} SAKURAフリマ All Rights Reserved</p>
                 </div>
             </div>
         </footer>
