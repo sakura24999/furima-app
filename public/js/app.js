@@ -148,4 +148,40 @@ document.addEventListener
             });
         }
     }
+
+    const editImageInput = document.getElementById('image');
+    const editImagePreview = document.getElementById('image-preview');
+
+    if(editImageInput && editImagePreview) {
+        editImageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    editImagePreview.innerHTML = `<img src="${e.target.result}" alt="プレビュー" class="preview-image">`;
+                }
+                reader.readAsDataURL(file);
+            }else {
+                editImagePreview.innerHTML = '';
+            }
+        });
+    }
+
+    const avatarInput = document.getElementById('avatar');
+    const avatarPreview = document.getElementById('avatar-preview');
+
+    if(avatarInput && avatarPreview) {
+        avatarInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    avatarPreview.innerHTML = `<img src="${e.target.result}" alt="プレビュー" class="preview-image">`;
+                }
+                reader.readAsDataURL(file);
+            }else {
+                avatarPreview.innerHTML = '';
+            }
+        });
+    }
 });
